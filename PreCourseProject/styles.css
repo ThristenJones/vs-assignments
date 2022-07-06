@@ -1,0 +1,14 @@
+footer {
+    background-color: black;
+    color: white;
+}
+
+.body {
+    background-color: cadetblue;
+}
+
+a {
+    color: yellow;
+    position: center;
+    display: inline-block;
+}
