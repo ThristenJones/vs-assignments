@@ -1,0 +1,30 @@
+img {
+    width: 300px;
+}
+
+#footer {
+    position: relative;
+    background-color: aquamarine;
+    padding: 35px
+}
+
+#footer > h3 {
+    position: relative;
+    left: 700px
+    
+}
+
+#email {
+    position: relative;
+
+}
+
+#website {
+    position: relative;
+    left: 400px
+}
+
+#address{
+    position: relative;
+    left: 700px
+}
