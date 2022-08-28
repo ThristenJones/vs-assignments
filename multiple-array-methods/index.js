@@ -1,4 +1,4 @@
-var peopleArray = [
+let peopleArray = [
     {
         firstName: "Sarah",
         lastName: "Palin",
@@ -45,9 +45,32 @@ let morePeopleArray = [
 
     const addArray = peopleArray.concat(morePeopleArray);
 
-    const filterNames = addArray.filter(person => person.lastName.indexOf('y') === person.lastName.length -1)
+    const filterNames = peopleArray.filter(person => {
+        // if(person.lastName.indexOf('a') === person.lastName.length -1){
+        //     return person
+        // }
 
+        if (person.lastName.indexOf('y') === person.lastName.length -1 || person.lastName[person.lastName.length -1] === 'a'){
+           
+            return person
+        }
+        })
+
+    
     console.log(filterNames);
+
+    filterNames.splice(1,1)
+    console.log(filterNames)
+
+    const reverseArray = filterNames.reverse();
+
+    console.log(reverseArray)
+
+   
+
+    // const remove = filterNames.indexOf('kyle')
+
+    // console.log(remove);
 
 
 // const older18 = peopleArray.filter(person => person.age > 18)
