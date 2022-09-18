@@ -17,10 +17,11 @@ get();
         const id = e.target.parentNode.id
         
         axios.delete(`https://api.vschool.io/johnsmit/todo/${id}`)
-          .then( response => console.log(response.data))
+          .then( res => {
+            console.log(res.data)
+            window.location.reload()
+          })
           .catch(error => console.log(error))
-
-          location.reload()
     }
   
 
@@ -46,41 +47,54 @@ function getData(array) {
         div.innerHTML = `<img src="${array[i].imgUrl}" width="50px" height="50px"/>`
         deleteButton.textContent = "DELETE"
         editButton.textContent = "EDIT"
-        saveButton.textContent = 'Save'
+        saveButton.textContent = 'Mark as complete'
 
         todoContainer.id = `${array[i]._id}`
 
+
+    // addEventListeners
+
     deleteButton.addEventListener('click', deleteItem)
     
-    editButton.addEventListener('click', function(e){
+    // editButton.addEventListener('click', function(e){
        
-       const title = document.createElement('input')
-       const description = document.createElement('input')
-       const imgUrl = document.createElement('input')
-       const price = document.createElement('input')
-       const id = e.target.parentNode.id
-
+    //    const title = document.createElement('input')
+    //    const description = document.createElement('input')
+    //    const imgUrl = document.createElement('input')
+    //    const price = document.createElement('input')
        
-       todoContainer.append(title, description, imgUrl, price, saveButton)
+    //    console.log(e)
 
-       const updateItem = {
-        title: todoForm.title.value,
-        description: todoForm.description.value,
-        imgUrl: todoForm.imgUrl.value,
-        price: todoForm.price.value
-    }
+    //    title.value = e.target.parentElement.children[0].textContent
+    //    description.value = e.target.parentElement.children[1].textContent
+    //    imgUrl.value = e.target.parentElement.children[2].textContent
+    //    price.value = e.target.parentElement.children[3].textContent
 
+    //    console.log(title.value)
+       
+    //    todoContainer.append(title, description, imgUrl, price, saveButton)
 
-    saveButton.addEventListener('submit', updateItem)
+    // });
+        
     
-        axios.put(`https://api.vschool.io/johnsmit/todo/${id}`, updateItem)
+    saveButton.addEventListener('click', function(e){
+        const id = e.target.parentNode.id
 
-            .then(res=> console.log(res.data))
-            .catch(error => console.log(error))
+        console.log(e)
 
-
+        const updateItem = {
+            title: 'completed',  
+        }
+    
+            axios.put(`https://api.vschool.io/johnsmit/todo/${id}`, updateItem)
+    
+                .then(res=> {
+                    console.log(res.data)
+                    window.location.reload()
+                })
+                .catch(error => console.log(error))
     });
-
+    
     checkbox.addEventListener('click', function(e){
         console.log(e)
 
@@ -95,13 +109,16 @@ function getData(array) {
         }
         
     })
-    todoContainer.append(h1, h2, h3, div, deleteButton, checkbox, todoForm, editButton, saveButton );
+
+    todoContainer.append(h1, h2, h3, div, deleteButton, checkbox, saveButton );
     document.body.appendChild(todoContainer);
     }
 };
     //OBJECTS
 
     //ADDEVENTLISTENERS
+
+  
      
 todoForm.addEventListener('submit', function(e){
     e.preventDefault();
@@ -112,13 +129,16 @@ todoForm.addEventListener('submit', function(e){
         imgUrl: todoForm.imgUrl.value,
         price: todoForm.price.value
     }
-
+    
     axios.post('https://api.vschool.io/johnsmit/todo', newPost)
-        .then(res => console.log(res.data))
+        .then(res => { 
+            console.log(res.data)
+            location.reload()
+        })
         .catch(error => console.log(error))
-});
 
-   
+})
+
 
     // CRUD
 
