@@ -1,3 +1,6 @@
+// THIS GAME AUTOMATICALLY RUNS ITSELF IN THE TERMINAL UNTIL LUIGI DIES WHEN TYPED "NODE INDEX.JS"
+
+
 class Player {
     constructor(name, totalCoins, status, hasStar,){
 
@@ -44,7 +47,7 @@ class Player {
     }
 }
 
-const character = new Player('Luigi', 0, 'small', 0);
+const character = new Player('Luigi', 4, 'small', 4);
 
 
 function gameStopper() {
