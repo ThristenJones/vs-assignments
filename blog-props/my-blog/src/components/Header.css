@@ -1,0 +1,31 @@
+*{
+    /* margin: auto; */
+}
+
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.header {
+
+    background-image: url('../images/kelly-sikkema-9OGNpJPVMZ8-unsplash.jpg');
+    position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 1700px;
+    padding-bottom: 100px;
+    margin: -10px;
+}
+
+.title1 {
+    position: relative;
+    font-size: 5rem;
+}
+      
+.header--section {
+    margin: auto;
+    /* width: 10%; */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}

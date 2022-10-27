@@ -1,0 +1,22 @@
+.nav {
+    display: flex;
+    flex-direction: row; 
+    color: white;
+}
+
+.nav--title {
+    display: flex;
+    justify-content: flex-end;
+   list-style: none;
+   align-items: flex-end;
+   padding-left: 1100px;
+   color: white;
+}
+
+.li {
+    padding: 4px
+}
+
+.title {
+    padding-left: 15px;
+}
