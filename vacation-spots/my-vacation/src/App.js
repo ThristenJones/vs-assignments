@@ -10,6 +10,7 @@ console.log(vacations)
                 place={vacate.place}
                 price ={vacate.price}
                 timeToGo ={vacate.timeToGo}
+                img = {vacate.img}
             />
         })
         return (
