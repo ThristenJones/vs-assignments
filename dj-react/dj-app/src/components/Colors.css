@@ -1,0 +1,11 @@
+.squares {
+    display: flex;  
+}
+
+.square1 {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    border: 1px solid black;
+    flex-direction: row; 
+}
