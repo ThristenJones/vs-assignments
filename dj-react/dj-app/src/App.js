@@ -3,17 +3,12 @@ import Colors from './components/Colors'
 
     export default function App() {
 
-        const [colorsArray, setColorsArray] = React.useState(["white", "white", "white2", "white2"])
+        const [colorsArray, setColorsArray] = React.useState(["white", "white", "white", "white"])
 
-        // const [topTwoColors, setTopTwo] = React.useState(colorsArray.slice(2))
-
-        // console.log(topTwoColors)
+        console.log(colorsArray[2])
 
         const allColors = colorsArray.map(color => <Colors color={color} />)
 
-       console.log(colorsArray, "testing colors arr")
-       
-        
         function colorSquare1(){
             setColorsArray( prevColor => prevColor.map(color => color==="black"? "white" : "black"))
         }
@@ -25,20 +20,16 @@ import Colors from './components/Colors'
 
         function colorSquare3(){
             setColorsArray(prevColor => {
-                prevColor.map(color => {
-                    console.log(color, "testing")
-
-                    return{
-                        colorsArray: [color[0], color[1], "blue", "white"]
-                    }
-                })
+              return [prevColor[0], prevColor[1], 'blue', prevColor[3]]
             })
-        }
+          }
 
 
-        function colorSquare4(){
-            setColorsArray(prevColor => prevColor.map(color => color ==="white" ? "blue": "white"))
-        }
+          function colorSquare4(){
+            setColorsArray(prevColor => {
+              return [prevColor[0], prevColor[1], prevColor[2], "blue"]
+            })
+          }
 
 
         return(
