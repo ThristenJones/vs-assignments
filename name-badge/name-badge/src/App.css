@@ -1,0 +1,58 @@
+body {
+    background-color: bisque;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px  ;
+    column-gap: 25px;
+    row-gap:25px;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+
+.textarea {
+    grid-column-start: 1;
+  grid-column-end: 4;
+  
+}
+
+.button {
+    position: relative;
+}
+
+.title {
+    
+    border: medium solid dark;
+    margin: 0px;
+    border-radius: 5px;
+}
+
+.badge {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: medium solid black;
+    border-radius: 5px;
+    padding: 20px;
+    background-color:burlywood
+}
+
+.comments {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.badgeTitle {
+    border: medium solid goldenrod;
+    background-color: goldenrod;
+}
+
+h1 {
+    position: relative;
+    padding-left: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 244, 244);
+}
+
