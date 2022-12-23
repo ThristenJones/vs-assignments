@@ -20,27 +20,30 @@ export default function App(){
 
     const formArray = badgeFormData.map(data => {
         
-
         return( 
         <div>
         
-            <p className="title"><b>BADGE:</b></p>
+            <p className="title"><b>BADGE: </b></p>
             <div className="badge">
-                <p><b>Name:</b> {formData.firstName} {formData.lastName}</p> 
+                <p><b>Name:</b> {data.firstName} {data.lastName}</p> 
 
-                <p><b>Place Of Birth:</b> {formData.birthPlace}</p>
+                <p><b>Place Of Birth:</b> {data.birthPlace}</p>
                 
-                <p><b>Email:</b> {formData.email}</p>
+                <p><b>Email:</b> {data.email}</p>
 
-                <p><b>Phone:</b> {formData.phoneNumber}</p>
+                <p><b>Phone:</b> {data.phoneNumber}</p>
 
-                <p><b>Favorite Food:</b> {formData.favoriteFoods}</p>
+                <p><b>Favorite Food:</b> {data.favoriteFoods}</p>
 
-                <textarea className="comments">{formData.comments}</textarea>
+                <textarea className="comments">{data.comments}</textarea>
             </div>
         </div>
         )
     })
+
+    function onlyNumbers(str) {
+        return /^[0-9]+$/.test(str);
+      }
 
     function handleSubmit(event){
         event.preventDefault()
@@ -69,9 +72,20 @@ export default function App(){
             alert('Please fill in all inputs: FAVORITE FOOD')
             return
         }
+
+        if(onlyNumbers(formData.phoneNumber) === false){
+            alert('PHONE NUMBER FIELD should only contain numbers')
+            return
+        }
+
         setBadgeFormData(prevValue => [...prevValue, formData]);
+        setFormData({
+            firstName: "", lastName: "", email: "", birthPlace: "", phoneNumber: "", favoriteFoods: "", comments: ""
+        })
 
     }
+
+
 
     return(
         <form onSubmit={handleSubmit}>

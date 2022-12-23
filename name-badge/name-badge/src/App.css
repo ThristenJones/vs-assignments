@@ -47,6 +47,7 @@ body {
 .badgeTitle {
     border: medium solid goldenrod;
     background-color: goldenrod;
+    border-radius: 3px;
 }
 
 h1 {
