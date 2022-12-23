@@ -82,7 +82,6 @@ export default function App(){
         setFormData({
             firstName: "", lastName: "", email: "", birthPlace: "", phoneNumber: "", favoriteFoods: "", comments: ""
         })
-
     }
 
 
@@ -151,17 +150,19 @@ export default function App(){
                     minLength='3'
                 ></input>
 
-                <textarea 
-                    className='textarea'
-                    type="text"
-                    name="comments"
-                    placeholder='Tell us about yourself?'
-                    value={formData.comments}
-                    onChange={handleChange}
-                    minLength='3'
-                />
+                <textarea
+                className='textarea'
+                type="text"
+                name="comments"
+                placeholder='Tell us about yourself?'
+                value={formData.comments}
+                onChange={handleChange}
+                minLength='3'>
+                
+                </textarea>
+                
                 <button className='button'>Submit</button>
-            </div>
+           </div>
             
            {formArray}
         </form>
