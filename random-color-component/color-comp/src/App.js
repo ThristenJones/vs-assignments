@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React from 'react';
+import "./App"
+import './App.css'
 
 
     export default function App(){
@@ -14,6 +16,6 @@ import React from 'react';
         }, [])
 
         return(
-           <div style={{backgroundColor: `#${color}`}}>Squad</div>
+           <div className='divColor' style={{backgroundColor: `#${color}`}}></div>
         )
     }
