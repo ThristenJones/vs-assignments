@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    background-color: purple;
+    color: white;
+}
+
+.header--subtitle {
+    padding-left: 500px;
+    
+}
